@@ -27,12 +27,35 @@
                   Template="{StaticResource MyScrollViewerControlTemplate}">
 
         <StackPanel VerticalAlignment="Center" Background="Transparent" >
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
-            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Border BorderThickness="10"
+            BorderBrush="#FF000000"
+                    Margin="0 20 0 20"
+                   >
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                </Image>
+            </Border>
+            <Border BorderThickness="10"
+            BorderBrush="#FF000000"
+                    Margin="0 20 0 20"
+                   >
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                </Image>
+            </Border>
+            <Border BorderThickness="10"
+            BorderBrush="#FF000000"
+                    Margin="0 20 0 20"
+                   >
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                </Image>
+            </Border>
+            <Border BorderThickness="10"
+            BorderBrush="#FF000000"
+                    Margin="0 20 0 20"
+                   >
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                </Image>
+            </Border>
+
         </StackPanel>
     </ScrollViewer>
 </UserControl>

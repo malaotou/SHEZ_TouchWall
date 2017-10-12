@@ -19,6 +19,9 @@
     <Window.Background>
         <ImageBrush ImageSource="./Resource/imgs/test/pdc.jpg"/>
     </Window.Background>
+    <Window.BorderThickness>
+        <Thickness Bottom="0" Left="0" Top="0" Right="0"></Thickness>
+    </Window.BorderThickness>
     <ScrollViewer x:Name="h_Main" 
                   PanningMode="Both"
                   HorizontalScrollBarVisibility="Auto" 
@@ -31,11 +34,10 @@
                       ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback">
 
 
-        <StackPanel Orientation="Horizontal">
 
             <StackPanel x:Name="demo"  Height="750"
                         VerticalAlignment="Center"
-                        Orientation="Horizontal">
+                        Orientation="Horizontal" >
                 <my:UC1 Padding="100 0 100 100"></my:UC1>
                 <my:UC1 Padding="100 0 100 100"></my:UC1>
                 <my:UC1 Padding="100 0 100 100"></my:UC1>
@@ -44,7 +46,7 @@
                 <my:UC1 Padding="100 0 100 100"></my:UC1>
 
             </StackPanel>
-        </StackPanel>
+    
         <!--<StackPanel FlowDirection="LeftToRight"  
                     VerticalAlignment="Center" 
                     Orientation="Horizontal">
