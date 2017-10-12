@@ -9,7 +9,9 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -23,6 +25,28 @@ namespace SHEZ_TouchWall
         public UC1()
         {
             InitializeComponent();
+            animate();
+
+
+        }
+        private void animate()
+        {
+            //Storyboard sb = (Storyboard)this.image.FindResource("spin");
+            //sb.Begin();
+            //sb.SetSpeedRatio(100);//sample data
+            //DoubleAnimation doubleAnimation = new DoubleAnimation();
+            //doubleAnimation.From = 100;
+            //doubleAnimation.To = 20;
+            //doubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(3));
+            //doubleAnimation.AutoReverse = true;
+            //doubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
+
+            //Storyboard storyboard = new Storyboard();
+            //storyboard.Children.Add(doubleAnimation);
+            //Storyboard.SetTarget(doubleAnimation, image);
+            //Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(Image.HeightProperty));//
+            //storyboard.Begin();
+
         }
         private void h_Main_PreviewMouseMove(object sender, MouseEventArgs e)
         {

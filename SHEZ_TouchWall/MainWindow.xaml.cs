@@ -23,9 +23,14 @@ namespace SHEZ_TouchWall
         public MainWindow()
         {
             InitializeComponent();
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri(@"d:\aa.jpg"));
+             
             //demo.Children.Add(image);
+        }
+        private void initControl()
+        {
+            //main_canvas.SetValue(Canvas.ZIndexProperty, -100);
+            //main_canvas.SetZIndex(-100);
+            //h_Main.SetZIndex(100);
         }
 
         private void h_Main_PreviewMouseMove(object sender, MouseEventArgs e)

@@ -22,7 +22,8 @@
     <Window.BorderThickness>
         <Thickness Bottom="0" Left="0" Top="0" Right="0"></Thickness>
     </Window.BorderThickness>
-    <ScrollViewer x:Name="h_Main" 
+    <StackPanel>
+        <ScrollViewer x:Name="h_Main" 
                   PanningMode="Both"
                   HorizontalScrollBarVisibility="Auto" 
                   PreviewMouseMove="h_Main_PreviewMouseMove" 
@@ -31,7 +32,8 @@
                   VerticalContentAlignment="Stretch" 
                       Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                       Template="{StaticResource MyScrollViewerControlTemplate}" BorderBrush="Green" BorderThickness="0"
-                      ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback">
+                      ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback"
+        >
 
 
 
@@ -46,8 +48,8 @@
                 <my:UC1 Padding="100 0 100 100"></my:UC1>
 
             </StackPanel>
-    
-        <!--<StackPanel FlowDirection="LeftToRight"  
+
+            <!--<StackPanel FlowDirection="LeftToRight"  
                     VerticalAlignment="Center" 
                     Orientation="Horizontal">
                 <ScrollViewer >
@@ -87,5 +89,10 @@
                 </StackPanel>
                 </ScrollViewer>
             </StackPanel>-->
-    </ScrollViewer>
+        </ScrollViewer>
+    </StackPanel>
+   
+        
+        
+    
 </dx:DXWindow>
