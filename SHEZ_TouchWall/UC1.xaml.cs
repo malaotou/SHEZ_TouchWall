@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -11,23 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DevExpress.Xpf.Core;
 
 namespace SHEZ_TouchWall
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for UC1.xaml
     /// </summary>
-    public partial class MainWindow : DXWindow
+    public partial class UC1 : UserControl
     {
-        public MainWindow()
+        public UC1()
         {
             InitializeComponent();
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri(@"d:\aa.jpg"));
-            //demo.Children.Add(image);
         }
-
         private void h_Main_PreviewMouseMove(object sender, MouseEventArgs e)
         {
 
@@ -43,11 +39,6 @@ namespace SHEZ_TouchWall
             }
             else
                 scrollViewer.LineRight();
-            e.Handled = true;
-        }
-
-        private void h_Main_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
-        {
             e.Handled = true;
         }
     }

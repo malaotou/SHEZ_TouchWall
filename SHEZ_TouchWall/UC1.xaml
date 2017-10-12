@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SHEZ_TouchWall.UC1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+            xmlns:my="clr-namespace:SHEZ_TouchWall"
+             d:DesignHeight="1500" d:DesignWidth="1500">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Resource/ScrollViewStyle.xaml">
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer x:Name="h_Main" 
+                   PanningMode="Both"
+                  HorizontalScrollBarVisibility="Hidden"
+                  VerticalScrollBarVisibility="Hidden"
+                  PreviewMouseMove="h_Main_PreviewMouseMove" 
+                  PreviewMouseWheel="h_Main_PreviewMouseWheel"
+                  VerticalAlignment="Center"
+                  VerticalContentAlignment="Stretch" 
+                  Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
+                  Template="{StaticResource MyScrollViewerControlTemplate}">
+
+        <StackPanel VerticalAlignment="Center" Background="Transparent" >
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+            <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Uniform" ></Image>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

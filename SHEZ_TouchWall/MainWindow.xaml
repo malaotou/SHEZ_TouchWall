@@ -3,7 +3,87 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-    </Grid>
+        xmlns:my="clr-namespace:SHEZ_TouchWall"
+        Title="MainWindow" Height="350" Width="525"  
+        WindowStyle="None"
+             WindowState="Maximized"
+        x:Name="RootWindow">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Resource/ScrollViewStyle.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="./Resource/imgs/test/pdc.jpg"/>
+    </Window.Background>
+    <ScrollViewer x:Name="h_Main" 
+                  PanningMode="Both"
+                  HorizontalScrollBarVisibility="Auto" 
+                  PreviewMouseMove="h_Main_PreviewMouseMove" 
+                  PreviewMouseWheel="h_Main_PreviewMouseWheel"
+                  VerticalAlignment="Center"
+                  VerticalContentAlignment="Stretch" 
+                      Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
+                      Template="{StaticResource MyScrollViewerControlTemplate}" BorderBrush="Green" BorderThickness="0"
+                      ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback">
+
+
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel x:Name="demo"  Height="750"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+                <my:UC1 Padding="100 0 100 100"></my:UC1>
+
+            </StackPanel>
+        </StackPanel>
+        <!--<StackPanel FlowDirection="LeftToRight"  
+                    VerticalAlignment="Center" 
+                    Orientation="Horizontal">
+                <ScrollViewer >
+                    <StackPanel x:Name="h_first"  >
+                        <Image Source="D:\aa.jpg"></Image>
+                    
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_second">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_third">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_forth">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_fifth">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_sixth">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+                <ScrollViewer>
+                    <StackPanel x:Name="h_sevnth">
+                    <Image Source="D:\aa.jpg"></Image>
+                </StackPanel>
+                </ScrollViewer>
+            </StackPanel>-->
+    </ScrollViewer>
 </dx:DXWindow>

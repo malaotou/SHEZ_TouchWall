@@ -23,5 +23,11 @@ namespace SHEZ_TouchWall
             base.OnExit(e);
             DevExpress.Xpf.Core.ApplicationThemeHelper.SaveApplicationThemeName();
         }
+
+        private void OnAppStartup_UpdateThemeName(object sender, StartupEventArgs e)
+        {
+
+            DevExpress.Xpf.Core.ApplicationThemeHelper.UpdateApplicationThemeName();
+        }
     }
 }
