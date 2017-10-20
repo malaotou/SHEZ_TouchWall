@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="DXControl.UCPhotoGalary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DXControl"
+             
+    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="LayoutRoot">
+        <local:PhotoGalleryControl x:Name="photoGallery"
+                    AnchorPoint="{Binding CityPoint}"
+                    ItemsSource="{Binding Path=SelectedCity.Places}"
+                    Title="{Binding Path=SelectedCity.Name}"
+                    MouseLeftButtonUp="photoGallery_MouseLeftButtonUp"
+                  >
+            <local:PhotoGalleryControl.ItemTemplate>
+                <DataTemplate>
+                    <local:PhotoGalleryItemControl Margin="15" Click="GalleryItemClick"/>
+                </DataTemplate>
+            </local:PhotoGalleryControl.ItemTemplate>
+        </local:PhotoGalleryControl>
+        <local:PlaceInfoControl x:Name="placeControl"
+                    Margin="10,10,10,80"
+                    HorizontalAlignment="Right"
+                    PlaceInfo="{Binding SelectedPlace}"
+                    ShowNextPlace="placeControl_ShowNextSight"
+                    ShowPrevPlace="placeControl_ShowPreviousSight"
+                    Visible="{Binding Path=ViewType, Converter={StaticResource viewTypeToBoolConverter}, ConverterParameter={x:Static local:ViewType.Detail}}"/>
+        <StackPanel Margin="15" HorizontalAlignment="Left" Orientation="Horizontal" VerticalAlignment="Top">
+            <local:PhotoGalleryButton x:Name="backButton"
+                        Click="OnBackClick"
+                        Visible="{Binding Path=ViewType, Converter={StaticResource viewTypeToBoolConverter}, ConverterParameter={x:Static local:ViewType.Detail}}">
+                <Image Source="/MapDemo;component/Images/PhotoGallery/BackButton.png" Stretch="None"/>
+            </local:PhotoGalleryButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

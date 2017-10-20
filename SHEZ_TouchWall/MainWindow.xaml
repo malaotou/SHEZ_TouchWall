@@ -4,9 +4,9 @@
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:my="clr-namespace:SHEZ_TouchWall"
-        Title="MainWindow" Height="350" Width="525"  
-        WindowStyle="None"
-             WindowState="Maximized"
+        Title="MainWindow" Height="700" Width="1000"  
+        WindowState="Maximized"
+        WindowStyle="None"        
         x:Name="RootWindow">
     <Window.Resources>
         <ResourceDictionary>
@@ -22,77 +22,51 @@
     <Window.BorderThickness>
         <Thickness Bottom="0" Left="0" Top="0" Right="0"></Thickness>
     </Window.BorderThickness>
-    <StackPanel>
-        <ScrollViewer x:Name="h_Main" 
-                  PanningMode="Both"
-                  HorizontalScrollBarVisibility="Auto" 
+
+        <ScrollViewer x:Name="h_Main1" 
+                  PanningMode="HorizontalOnly"
+                 
+                  HorizontalScrollBarVisibility="Hidden" 
                   PreviewMouseMove="h_Main_PreviewMouseMove" 
                   PreviewMouseWheel="h_Main_PreviewMouseWheel"
+                  ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback" 
+                  ManipulationStarting="h_Main_ManipulationStarting" 
+                  ManipulationDelta="h_Main_ManipulationDelta" 
+                  ManipulationCompleted="h_Main_ManipulationCompleted"
                   VerticalAlignment="Center"
                   VerticalContentAlignment="Stretch" 
-                      Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
-                      Template="{StaticResource MyScrollViewerControlTemplate}" BorderBrush="Green" BorderThickness="0"
-                      ManipulationBoundaryFeedback="h_Main_ManipulationBoundaryFeedback"
+                  Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
+                      BorderBrush="Green" BorderThickness="0"   
+                      Template="{StaticResource MyScrollViewerControlTemplate}"
         >
-
-
-
-            <StackPanel x:Name="demo"  Height="750"
+        <StackPanel x:Name="demo"  
+                        Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                         VerticalAlignment="Center"
                         Orientation="Horizontal" >
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
-                <my:UC1 Padding="100 0 100 100"></my:UC1>
+            <my:UCBook 
+                       Height="500" 
+                    Width="800"
+                       Margin="300 50 "  OverridesDefaultStyle="True" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"  TouchDown="UCBook_TouchDown" ></my:UCBook>
+            <my:UCPhotoGallery2  Margin="0 -200 0 0"
+                            Width="{Binding ElementName=RootWindow,Path=Width}" 
+                            Height="1100"
+                            Padding="100"></my:UCPhotoGallery2>
+            <my:UCFlicker Margin="0 -200 0 0"
+                            Width="{Binding ElementName=RootWindow,Path=Width}" 
+                            Height="1100"  Padding="100" ></my:UCFlicker>
 
+
+            <!--<StackPanel Width="{Binding ElementName=RootWindow,Path=ActualWidth}" >-->
+                <my:UCBook 
+                       Height="500" 
+                    Width="800"
+                       Margin="50 50 "  OverridesDefaultStyle="True" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"  TouchDown="UCBook_TouchDown" ></my:UCBook>
+            <!--</StackPanel>-->
+           
+           
+
+ 
             </StackPanel>
-
-            <!--<StackPanel FlowDirection="LeftToRight"  
-                    VerticalAlignment="Center" 
-                    Orientation="Horizontal">
-                <ScrollViewer >
-                    <StackPanel x:Name="h_first"  >
-                        <Image Source="D:\aa.jpg"></Image>
-                    
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_second">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_third">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_forth">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_fifth">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_sixth">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-                <ScrollViewer>
-                    <StackPanel x:Name="h_sevnth">
-                    <Image Source="D:\aa.jpg"></Image>
-                </StackPanel>
-                </ScrollViewer>
-            </StackPanel>-->
         </ScrollViewer>
-    </StackPanel>
-   
-        
-        
-    
+
 </dx:DXWindow>

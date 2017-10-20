@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30E8128D-937A-40CB-9AEA-0B8FB7B1CF33}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DXControl</RootNamespace>
+    <AssemblyName>DXControl</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Charts.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Map.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Map.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Carousel.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Carousel.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Charts.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Controls.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v15.1" />
+    <Reference Include="DevExpress.Data.v15.1" />
+    <Reference Include="DevExpress.Printing.v15.1.Core" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.LayoutControl.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Globalization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Employee.cs" />
+    <Compile Include="ImageContainer.cs" />
+    <Compile Include="PaletteItem.cs" />
+    <Compile Include="UCBook.xaml.cs">
+      <DependentUpon>UCBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCChart1.xaml.cs">
+      <DependentUpon>UCChart1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCChart2.xaml.cs">
+      <DependentUpon>UCChart2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCChart3.xaml.cs">
+      <DependentUpon>UCChart3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCFlicker.xaml.cs">
+      <DependentUpon>UCFlicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCPhotoGallery2.xaml.cs">
+      <DependentUpon>UCPhotoGallery2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCTitle.xaml.cs">
+      <DependentUpon>UCTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <Compile Include="VisibleControl.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCChart1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCChart2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCChart3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCFlicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCPhotoGallery2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\left.jpg" />
+    <Resource Include="images\right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\1.jpg" />
+    <Resource Include="images\Agents\2.jpg" />
+    <Resource Include="images\Agents\3.jpg" />
+    <Resource Include="images\Agents\4.jpg" />
+    <Resource Include="images\Agents\5.jpg" />
+    <Resource Include="images\Agents\6.jpg" />
+    <Resource Include="images\Calc.png" />
+    <Resource Include="images\Cars\3.jpg" />
+    <Resource Include="images\Cars\5.jpg" />
+    <Resource Include="images\Cars\6.jpg" />
+    <Resource Include="images\Cars\7.jpg" />
+    <Resource Include="images\Cars\a3.jpg" />
+    <Resource Include="images\Cars\a4.jpg" />
+    <Resource Include="images\Cars\a5.jpg" />
+    <Resource Include="images\Cars\a6.jpg" />
+    <Resource Include="images\Cars\a8.jpg" />
+    <Resource Include="images\Cars\audi.png" />
+    <Resource Include="images\Cars\bmw.png" />
+    <Resource Include="images\Cars\c.jpg" />
+    <Resource Include="images\Cars\cl.jpg" />
+    <Resource Include="images\Cars\clk.jpg" />
+    <Resource Include="images\Cars\cls.jpg" />
+    <Resource Include="images\Cars\e.jpg" />
+    <Resource Include="images\Cars\m3.jpg" />
+    <Resource Include="images\Cars\m5.jpg" />
+    <Resource Include="images\Cars\m6.jpg" />
+    <Resource Include="images\Cars\mercedes.png" />
+    <Resource Include="images\Cars\r8.jpg" />
+    <Resource Include="images\Cars\rs4.jpg" />
+    <Resource Include="images\Cars\s.jpg" />
+    <Resource Include="images\Cars\s4.jpg" />
+    <Resource Include="images\Cars\s5.jpg" />
+    <Resource Include="images\Cars\s6.jpg" />
+    <Resource Include="images\Cars\s8.jpg" />
+    <Resource Include="images\Cars\sl.jpg" />
+    <Resource Include="images\Cars\slk.jpg" />
+    <Resource Include="images\Cars\slr.jpg" />
+    <Resource Include="images\Cars\tt.jpg" />
+    <Resource Include="images\Cars\z4.jpg" />
+    <Resource Include="images\Cars\z4m.jpg" />
+    <Resource Include="images\DashboardBackground.jpg" />
+    <Resource Include="images\DXperience.png" />
+    <Resource Include="images\Photos\01.JPG" />
+    <Resource Include="images\Photos\02.JPG" />
+    <Resource Include="images\Photos\03.JPG" />
+    <Resource Include="images\Photos\04.JPG" />
+    <Resource Include="images\Photos\05.JPG" />
+    <Resource Include="images\Photos\06.JPG" />
+    <Resource Include="images\Photos\07.JPG" />
+    <Resource Include="images\Photos\08.JPG" />
+    <Resource Include="images\Photos\09.JPG" />
+    <Resource Include="images\Photos\10.JPG" />
+    <Resource Include="images\Rates.png" />
+    <Resource Include="images\RealEstate\1.jpg" />
+    <Resource Include="images\RealEstate\2.jpg" />
+    <Resource Include="images\RealEstate\3.jpg" />
+    <Resource Include="images\Research.png" />
+    <Resource Include="images\Statistics.png" />
+    <Resource Include="images\System.png" />
+    <Resource Include="images\UserManagment.png" />
+    <Resource Include="images\VCL.png" />
+    <Resource Include="images\ZillowLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\GDPofG8.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

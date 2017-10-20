@@ -35,9 +35,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Charts.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Carousel.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Carousel.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Charts.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.Controls.v15.1.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Xpf.Core.v15.1" />
     <Reference Include="DevExpress.Data.v15.1" />
     <Reference Include="DevExpress.Printing.v15.1.Core" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.LayoutControl.v15.1.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,12 +78,24 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\TouchScrolling.cs" />
+    <Compile Include="ImageContainer.cs" />
     <Compile Include="Resource\animationDemo.xaml.cs">
       <DependentUpon>animationDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="UC1.xaml.cs">
       <DependentUpon>UC1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\Employee.cs" />
+    <Compile Include="UserControl\UCBook.xaml.cs">
+      <DependentUpon>UCBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCFlicker.xaml.cs">
+      <DependentUpon>UCFlicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCPhotoGallery2.xaml.cs">
+      <DependentUpon>UCPhotoGallery2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +117,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UC1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\UCBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\UCFlicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\UCPhotoGallery2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +164,209 @@
   <ItemGroup>
     <Resource Include="Resource\imgs\test\bg.jpg" />
     <Resource Include="Resource\imgs\test\pdc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Agents\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Calc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\a3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\a4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\a5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\a6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\a8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\audi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\bmw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\cl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\clk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\cls.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\m3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\m5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\m6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\mercedes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\r8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\rs4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\s.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\s4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\s5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\s6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\s8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\sl.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\slk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\slr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\tt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\z4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Cars\z4m.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\DashboardBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\DXperience.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\01.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\02.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\03.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\04.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\05.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\06.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\07.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\08.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\09.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Photos\10.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Rates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\RealEstate\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\RealEstate\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\RealEstate\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Research.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\System.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\UserManagment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\VCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ZillowLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\RealEstate\4.jpg" />
+    <Resource Include="images\RealEstate\5.jpg" />
+    <Resource Include="images\RealEstate\6.jpg" />
+    <Resource Include="images\RealEstate\7.jpg" />
+    <Resource Include="images\RealEstate\8.jpg" />
+    <Resource Include="images\RealEstate\9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

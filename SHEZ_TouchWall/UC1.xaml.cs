@@ -46,6 +46,7 @@ namespace SHEZ_TouchWall
             //Storyboard.SetTarget(doubleAnimation, image);
             //Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath(Image.HeightProperty));//
             //storyboard.Begin();
+             
 
         }
         private void h_Main_PreviewMouseMove(object sender, MouseEventArgs e)
@@ -64,6 +65,21 @@ namespace SHEZ_TouchWall
             else
                 scrollViewer.LineRight();
             e.Handled = true;
+        }
+
+        private void image_TouchEnter(object sender, TouchEventArgs e)
+        {
+
+        }
+
+        private void h_Main_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        {
+
+        }
+
+        private void h_Main_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+
         }
     }
 }

@@ -40,20 +40,62 @@ namespace SHEZ_TouchWall
 
         private void h_Main_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            ScrollViewer scrollViewer = sender as ScrollViewer;
+            //ScrollViewer scrollViewer = sender as ScrollViewer;
 
-            if (e.Delta > 0)
-            {
-                scrollViewer.LineLeft();
-            }
-            else
-                scrollViewer.LineRight();
-            e.Handled = true;
+            //if (e.Delta > 0)
+            //{
+            //    scrollViewer.LineLeft();
+            //}
+            //else
+            //    scrollViewer.LineRight();
+            //e.Handled = true;
         }
 
         private void h_Main_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void h_Main_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        {
+            e.ManipulationContainer = h_Main1;
+            e.Mode = ManipulationModes.All;
+        }
+
+        private void h_Main_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+            try
+            {
+                FrameworkElement element = (FrameworkElement)e.Source;
+                element.Opacity = 0.5;
+                Matrix matrix = ((MatrixTransform)element.RenderTransform).Matrix;
+                var deltaManipulation = e.DeltaManipulation;
+                Point center = new Point(element.ActualWidth / 2, element.ActualHeight / 2);
+                center = matrix.Transform(center);
+                matrix.ScaleAt(deltaManipulation.Scale.X, deltaManipulation.Scale.Y, center.X, center.Y);
+                matrix.RotateAt(e.DeltaManipulation.Rotation, center.X, center.Y);
+                matrix.Translate(e.DeltaManipulation.Translation.X, e.DeltaManipulation.Translation.Y);
+                ((MatrixTransform)element.RenderTransform).Matrix = matrix;
+            }
+            catch(Exception ex)
+            {
+
+            }
+              
+        }
+
+        private void h_Main_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+        {
+            FrameworkElement element = (FrameworkElement)e.Source;
+            element.Opacity = 1;
+
+        }
+
+        private void UCBook_TouchDown(object sender, TouchEventArgs e)
+        {
+            UCBook book = new SHEZ_TouchWall.UCBook();
+            e.Handled = true;
+           
         }
     }
 }

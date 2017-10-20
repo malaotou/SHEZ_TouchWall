@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
             xmlns:my="clr-namespace:SHEZ_TouchWall"
-             d:DesignHeight="1500" d:DesignWidth="1500">
+             d:DesignHeight="1500" d:DesignWidth="1500"  Margin="100 0 0 100">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -46,11 +46,11 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <StackPanel VerticalAlignment="Center" Background="Transparent" >
+        <StackPanel VerticalAlignment="Center" Background="Transparent">
 
             <Border BorderThickness="10"
             BorderBrush="#FF000000"
-                    Margin="0 20 0 20"
+                    Margin="100 20 100 20" IsManipulationEnabled="True"
                    >
                 <Border.RenderTransform>
                     <RotateTransform x:Name="TransRotate" CenterX="150" CenterY="150" Angle="0" />
@@ -73,29 +73,46 @@
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseRightButtonDown">
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <DoubleAnimationUsingKeyFrames 
+                            Storyboard.TargetName="TransRotate" 
+                                Storyboard.TargetProperty="Angle"
+                            RepeatBehavior="1x">
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.0" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-5"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="5"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
                 </Border.Triggers>
                 <Image x:Name="image" Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill"
-                       RenderTransformOrigin="0.5,0.5">
+                       RenderTransformOrigin="0.5,0.5" TouchEnter="image_TouchEnter" IsManipulationEnabled="True">
                    
                 </Image>
             </Border>
             <Border BorderThickness="10"
             BorderBrush="#FF000000"
-                    Margin="0 20 0 20"
+                    Margin="100 20 100 20" IsManipulationEnabled="True"
                    >
-                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill" IsManipulationEnabled="True">
                 </Image>
             </Border>
             <Border BorderThickness="10"
             BorderBrush="#FF000000"
-                    Margin="0 20 0 20"
+                   Margin="100 20 100 20" IsManipulationEnabled="True"
                    >
-                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
+                <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill" IsManipulationEnabled="True">
                 </Image>
             </Border>
             <Border BorderThickness="10"
             BorderBrush="#FF000000"
-                    Margin="0 20 0 20"
+                    Margin="100 20 100 20" IsManipulationEnabled="True"
                    >
                 <Image Source="./Resource/imgs/test/aa.jpg" Width="auto" Height=" auto" Stretch="Fill">
                 </Image>
