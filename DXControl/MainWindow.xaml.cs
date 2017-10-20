@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 
-namespace SHEZ_TouchWall
+namespace DXControl
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

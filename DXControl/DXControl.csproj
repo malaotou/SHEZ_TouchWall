@@ -85,9 +85,6 @@
     <Compile Include="Employee.cs" />
     <Compile Include="ImageContainer.cs" />
     <Compile Include="PaletteItem.cs" />
-    <Compile Include="UCBook.xaml.cs">
-      <DependentUpon>UCBook.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UCChart1.xaml.cs">
       <DependentUpon>UCChart1.xaml</DependentUpon>
     </Compile>
@@ -96,12 +93,6 @@
     </Compile>
     <Compile Include="UCChart3.xaml.cs">
       <DependentUpon>UCChart3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UCFlicker.xaml.cs">
-      <DependentUpon>UCFlicker.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UCPhotoGallery2.xaml.cs">
-      <DependentUpon>UCPhotoGallery2.xaml</DependentUpon>
     </Compile>
     <Compile Include="UCTitle.xaml.cs">
       <DependentUpon>UCTitle.xaml</DependentUpon>
@@ -124,10 +115,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UCBook.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UCChart1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,14 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UCChart3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UCFlicker.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UCPhotoGallery2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

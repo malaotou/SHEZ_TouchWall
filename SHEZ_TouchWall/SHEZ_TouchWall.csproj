@@ -89,6 +89,9 @@
     <Compile Include="UserControl\UCBook.xaml.cs">
       <DependentUpon>UCBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\UCChart2.xaml.cs">
+      <DependentUpon>UCChart2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\UCFlicker.xaml.cs">
       <DependentUpon>UCFlicker.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,7 @@
       <DependentUpon>UCPhotoGallery2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
+    <Compile Include="VisibleControl.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -123,6 +127,10 @@
     <Page Include="UserControl\UCBook.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\UCChart2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControl\UCFlicker.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -367,6 +375,9 @@
     <Resource Include="images\RealEstate\7.jpg" />
     <Resource Include="images\RealEstate\8.jpg" />
     <Resource Include="images\RealEstate\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\GDPofG8.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

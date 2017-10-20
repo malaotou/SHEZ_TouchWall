@@ -43,10 +43,14 @@
                         Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                         VerticalAlignment="Center"
                         Orientation="Horizontal" >
-            <my:UCBook 
-                       Height="500" 
-                    Width="800"
-                       Margin="300 50 "  OverridesDefaultStyle="True" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"  TouchDown="UCBook_TouchDown" ></my:UCBook>
+            <StackPanel Orientation="Vertical">
+                <Label Content="校史沿革" FontSize="20" Margin="300 100 0 0" ></Label>
+                <my:UCBook 
+                       Height="700" 
+                    Width="900"
+                       Margin="300 0 "  OverridesDefaultStyle="True" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"  TouchDown="UCBook_TouchDown" ></my:UCBook>
+            </StackPanel>
+           
             <my:UCPhotoGallery2  Margin="0 -200 0 0"
                             Width="{Binding ElementName=RootWindow,Path=Width}" 
                             Height="1100"
@@ -55,7 +59,9 @@
                             Width="{Binding ElementName=RootWindow,Path=Width}" 
                             Height="1100"  Padding="100" ></my:UCFlicker>
 
-
+            <my:UCChart2 Margin="0 -200 0 0"
+                            Width="{Binding ElementName=RootWindow,Path=Width}" 
+                            Height="1100"  Padding="100"></my:UCChart2>
             <!--<StackPanel Width="{Binding ElementName=RootWindow,Path=ActualWidth}" >-->
                 <my:UCBook 
                        Height="500" 
