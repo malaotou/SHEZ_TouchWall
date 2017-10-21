@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
+using System.Windows.Threading;
 
 namespace SHEZ_TouchWall
 {
@@ -20,10 +21,18 @@ namespace SHEZ_TouchWall
     /// </summary>
     public partial class MainWindow : DXWindow
     {
+        private DispatcherTimer timer = null;
         public MainWindow()
         {
             InitializeComponent();
-             
+            Image image3 = new Image();
+            image3.Source = new BitmapImage(new Uri(@"d:\bg.jpg"));
+            image3.IsManipulationEnabled = true;
+            //image3.IsManipulationEnabled 
+            image3.Width = 200;
+            image3.Height = 200;
+            container.Children.Add(image3);
+
             //demo.Children.Add(image);
         }
         private void initControl()
@@ -58,7 +67,7 @@ namespace SHEZ_TouchWall
 
         private void h_Main_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
         {
-            e.ManipulationContainer = h_Main1;
+            e.ManipulationContainer = container;
             e.Mode = ManipulationModes.All;
         }
 
@@ -96,6 +105,32 @@ namespace SHEZ_TouchWall
             UCBook book = new SHEZ_TouchWall.UCBook();
             e.Handled = true;
            
+        }
+
+        private void RootWindow_TouchDown(object sender, TouchEventArgs e)
+        {
+            e.Handled = true;
+            //Image image3 = new Image();
+            //image3.Source = new BitmapImage(new Uri(@"d:\bg.jpg"));
+            //image3.IsManipulationEnabled = true;
+            //image3.Width = 200;
+            //image3.Height = 200;
+            //container.Children.Add(image3);
+            ////if(e.OriginalSource==Image)
+            //if (e.OriginalSource.GetType() == typeof(Image))
+            //{
+            //    var image = (Image)e.OriginalSource;
+            //    var image2 = new Image();
+            //    image2.Source = image2.Source;
+            //    image2.SetLeft(image.GetPosition(container).X);
+            //    image2.SetTop(image.GetPosition(container).Y);
+            //    image2.Width =image.Width+100;
+            //    image2.Height = image.Height + 100;
+            //    image2.IsManipulationEnabled = true;
+            //    container.Children.Add(image2);
+
+
+            //}
         }
     }
 }
