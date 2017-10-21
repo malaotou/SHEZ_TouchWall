@@ -19,7 +19,7 @@ namespace SHEZ_TouchWall
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : DXWindow
+    public partial class MainWindow : Window
     {
         private System.Timers.Timer timerNotice = null;
         private Stopwatch watcher = new Stopwatch();
@@ -69,39 +69,42 @@ namespace SHEZ_TouchWall
             e.Handled = true;
         }
 
-        private void h_Main_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
+        private void Window_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
+        {
+
+        }
+
+
+
+        private void Window_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
+        {
+            var element = e.OriginalSource as UIElement;
+
+            var transformation = element.RenderTransform
+                                                 as MatrixTransform;
+            var matrix = transformation == null ? Matrix.Identity :
+                                           transformation.Matrix;
+
+            matrix.ScaleAt(e.DeltaManipulation.Scale.X,
+                           e.DeltaManipulation.Scale.Y,
+                           e.ManipulationOrigin.X,
+                           e.ManipulationOrigin.Y);
+
+            matrix.RotateAt(e.DeltaManipulation.Rotation,
+                            e.ManipulationOrigin.X,
+                            e.ManipulationOrigin.Y);
+
+            matrix.Translate(e.DeltaManipulation.Translation.X,
+                             e.DeltaManipulation.Translation.Y);
+
+            element.RenderTransform = new MatrixTransform(matrix);
+            e.Handled = true;
+        }
+
+        private void Canvas_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
         {
             e.ManipulationContainer = container;
-            e.Mode = ManipulationModes.All;
-        }
-
-        private void h_Main_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
-        {
-            try
-            {
-                FrameworkElement element = (FrameworkElement)e.Source;
-                element.Opacity = 0.5;
-                Matrix matrix = ((MatrixTransform)element.RenderTransform).Matrix;
-                var deltaManipulation = e.DeltaManipulation;
-                Point center = new Point(element.ActualWidth / 2, element.ActualHeight / 2);
-                center = matrix.Transform(center);
-                matrix.ScaleAt(deltaManipulation.Scale.X, deltaManipulation.Scale.Y, center.X, center.Y);
-                matrix.RotateAt(e.DeltaManipulation.Rotation, center.X, center.Y);
-                matrix.Translate(e.DeltaManipulation.Translation.X, e.DeltaManipulation.Translation.Y);
-                ((MatrixTransform)element.RenderTransform).Matrix = matrix;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
-
-        private void h_Main_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
-        {
-            FrameworkElement element = (FrameworkElement)e.Source;
-            element.Opacity = 1;
-
+            e.Handled = true;
         }
 
         private void UCBook_TouchDown(object sender, TouchEventArgs e)
@@ -121,20 +124,22 @@ namespace SHEZ_TouchWall
             //image3.Height = 200;
             //container.Children.Add(image3);
             ////if(e.OriginalSource==Image)
-            //if (e.OriginalSource.GetType() == typeof(Image))
-            //{
-            //    var image = (Image)e.OriginalSource;
-            //    var image2 = new Image();
-            //    image2.Source = image2.Source;
-            //    image2.SetLeft(image.GetPosition(container).X);
-            //    image2.SetTop(image.GetPosition(container).Y);
-            //    image2.Width =image.Width+100;
-            //    image2.Height = image.Height + 100;
-            //    image2.IsManipulationEnabled = true;
-            //    container.Children.Add(image2);
+            if (e.OriginalSource.GetType() == typeof(Image))
+            {
+                var image = (Image)e.OriginalSource;
+                var image2 = new Image();
+                image2.Source = image2.Source;
+                image2.SetLeft(image.GetPosition(container).X);
+                image2.SetTop(image.GetPosition(container).Y);
+                image2.Width = image.Width + 100;
+                image2.Height = image.Height + 100;
+                image2.SetZIndex(100);
+                image2.IsManipulationEnabled = true;
+                container.Children.Add(image2);
 
 
-            //}
+                //}
+            }
         }
 
         private void RootWindow_TouchDown_1(object sender, TouchEventArgs e)
@@ -192,7 +197,7 @@ namespace SHEZ_TouchWall
             {
                 this.Dispatcher.Invoke(new Action(() =>
                 {
-                    hStackPanel.Children.Clear();
+                    //hStackPanel.Children.Clear();
                     #region not use
 
                     ////将对象转化成Json字符串
@@ -255,7 +260,7 @@ namespace SHEZ_TouchWall
                         //        stackpanel.Children.Add(content);
 
 
-                                     
+
                         //    }
                         //    #endregion
                         //}
@@ -323,14 +328,14 @@ namespace SHEZ_TouchWall
         private void AddContentControl(canvas outcanvas, StackPanel container)
         {
             // 处理外层StackPanel
-            
+
 
             foreach (var item in outcanvas.Controls)
             {
                 StackPanel stackpanel = new StackPanel();
                 if (item.Enable)
                 {
-                   
+
                     stackpanel.Orientation = Orientation.Vertical;
                     stackpanel.Width = outcanvas.Width;
                     #region//Process Titel
@@ -382,8 +387,8 @@ namespace SHEZ_TouchWall
                 }
                 container.Children.Add(stackpanel);
             }
-           
-            
+
+
         }
 
         private Thickness processThickness(string arry)
@@ -399,7 +404,7 @@ namespace SHEZ_TouchWall
                                                 double.Parse(paddingItems[3]));
                 else return new Thickness(0.0, 0.0, 0.0, 0.0);
             }
-           
+
             else return new Thickness(0.0, 0.0, 0.0, 0.0);
         }
 

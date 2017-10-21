@@ -1,4 +1,4 @@
-﻿<dx:DXWindow x:Class="SHEZ_TouchWall.MainWindow"
+﻿<Window x:Class="SHEZ_TouchWall.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
@@ -27,7 +27,7 @@
                   ManipulationDelta="h_Main_ManipulationDelta" 
                   ManipulationCompleted="h_Main_ManipulationCompleted"
             x:Name="container"></Canvas>-->
-        <ScrollViewer x:Name="h_Main1" 
+    <ScrollViewer x:Name="h_Main1" 
                   PanningMode="HorizontalOnly"
                   HorizontalScrollBarVisibility="Hidden" 
                   PreviewMouseMove="h_Main_PreviewMouseMove" 
@@ -39,16 +39,20 @@
                       BorderBrush="Green" BorderThickness="0"   
                       Template="{StaticResource MyScrollViewerControlTemplate}"
         >
+
         <Canvas Width="6400" Height="1200" x:Name="container"
-                ManipulationStarting="h_Main_ManipulationStarting" 
-                  ManipulationDelta="h_Main_ManipulationDelta" 
-                  ManipulationCompleted="h_Main_ManipulationCompleted"
-               
-                >
+               ManipulationCompleted="Window_ManipulationCompleted" 
+                                ManipulationStarting="Canvas_ManipulationStarting"
+                                ManipulationDelta="Window_ManipulationDelta" >
+            
+
             <StackPanel x:Name="hStackPanel"  
                         Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                         VerticalAlignment="Center"  
                         Orientation="Horizontal">
+                <StackPanel x:Name="demo">
+                    <Image Source="D:\bg.jpg" Height="200" Width="200" Panel.ZIndex="100" IsManipulationEnabled="True"></Image>
+                </StackPanel>
                 <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
                     <my:UC1 Margin="200 50 0 0"
@@ -86,5 +90,5 @@
             </StackPanel>
         </Canvas>
     </ScrollViewer>
-    
-</dx:DXWindow>
+
+</Window>
