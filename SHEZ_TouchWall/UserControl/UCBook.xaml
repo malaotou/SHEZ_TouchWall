@@ -10,8 +10,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-
+        <StackPanel x:Name="demo">
+            <Image Source="D:\bg.jpg" Height="200" Width="200" Panel.ZIndex="100" IsManipulationEnabled="True"></Image>
+        
         <Border>
+           
             <!--<Border.Background>
                 <LinearGradientBrush EndPoint="0.625,1.051" StartPoint="0.304,-0.187">
                     <GradientStop Color="#FF544765" />
@@ -328,5 +331,6 @@
                 </dxco:Book.PageTemplate>
             </dxco:Book>
         </Border>
+        </StackPanel>
     </Grid>
 </UserControl>

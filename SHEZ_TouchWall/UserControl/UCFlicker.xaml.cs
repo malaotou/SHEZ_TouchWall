@@ -24,5 +24,16 @@ namespace SHEZ_TouchWall
         {
             InitializeComponent();
         }
+
+        private void Image_TouchDown(object sender, TouchEventArgs e)
+        {
+            Image image = new Image();
+            var source = (sender as Image);
+            image.Source = source.Source;
+            image.SetValue(Canvas.TopProperty, source.GetValue(Canvas.TopProperty));
+            image.SetValue(Canvas.LeftProperty, source.GetValue(Canvas.LeftProperty));
+            image.IsManipulationEnabled = true;
+            ((SHEZ_TouchWall.MainWindow)Application.Current.MainWindow).container.Children.Add(image);
+        }
     }
 }

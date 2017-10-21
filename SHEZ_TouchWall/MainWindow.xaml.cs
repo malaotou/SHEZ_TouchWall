@@ -13,6 +13,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using System.Windows.Media.Imaging;
 
 namespace SHEZ_TouchWall
 {
@@ -103,6 +104,7 @@ namespace SHEZ_TouchWall
 
         private void Canvas_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
         {
+
             e.ManipulationContainer = container;
             e.Handled = true;
         }
@@ -423,6 +425,26 @@ namespace SHEZ_TouchWall
         private void OnProcess(object sender, FileSystemEventArgs e)
         {
             InitCurrentWindow();
+        }
+
+        private void container_ManipulationInertiaStarting(object sender, ManipulationInertiaStartingEventArgs e)
+        {
+            // Decrease the velocity of the Rectangle's movement by 
+            // 10 inches per second every second.
+            // (10 inches * 96 pixels per inch / 1000ms^2)
+            e.TranslationBehavior.DesiredDeceleration = 10.0 * 96.0 / (1000.0 * 1000.0);
+
+            // Decrease the velocity of the Rectangle's resizing by 
+            // 0.1 inches per second every second.
+            // (0.1 inches * 96 pixels per inch / (1000ms^2)
+            e.ExpansionBehavior.DesiredDeceleration = 0.1 * 96 / (1000.0 * 1000.0);
+
+            // Decrease the velocity of the Rectangle's rotation rate by 
+            // 2 rotations per second every second.
+            // (2 * 360 degrees / (1000ms^2)
+            e.RotationBehavior.DesiredDeceleration = 720 / (1000.0 * 1000.0);
+
+            e.Handled = true;
         }
     }
 }

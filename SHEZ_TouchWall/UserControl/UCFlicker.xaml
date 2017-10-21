@@ -199,7 +199,7 @@
                                         <Viewport2DVisual3D.Visual>
                                             <StackPanel Orientation="Vertical" Background="Black">
                                                 <Border Name="item" Width="256" Height="256" HorizontalAlignment="Center" Background="#FF000000" Padding="1,1,1,1" SnapsToDevicePixels="True">
-                                                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding}" Stretch="UniformToFill" />
+                                                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding}" Stretch="UniformToFill"  TouchDown="Image_TouchDown"/>
                                                 </Border>
                                                 <Rectangle Height="256" RenderOptions.CachingHint="Cache">
                                                     <Rectangle.Fill>

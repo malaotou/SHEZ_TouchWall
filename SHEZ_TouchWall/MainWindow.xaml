@@ -43,7 +43,7 @@
         <Canvas Width="6400" Height="1200" x:Name="container"
                ManipulationCompleted="Window_ManipulationCompleted" 
                                 ManipulationStarting="Canvas_ManipulationStarting"
-                                ManipulationDelta="Window_ManipulationDelta" >
+                                ManipulationDelta="Window_ManipulationDelta" ManipulationInertiaStarting="container_ManipulationInertiaStarting" >
             
 
             <StackPanel x:Name="hStackPanel"  
@@ -51,7 +51,7 @@
                         VerticalAlignment="Center"  
                         Orientation="Horizontal">
                 <StackPanel x:Name="demo">
-                    <Image Source="D:\bg.jpg" Height="200" Width="200" Panel.ZIndex="100" IsManipulationEnabled="True"></Image>
+                    <Image Source="D:\bg.jpg" Height="200" Width="200" Panel.ZIndex="1" IsManipulationEnabled="True"></Image>
                 </StackPanel>
                 <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
