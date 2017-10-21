@@ -1,0 +1,67 @@
+﻿{
+
+  "Controls": [
+    {
+      "Id": 1,
+      "Title": "学校历史",
+      "Type": 1,
+      "images": null,
+      "Enable": false,
+      "Height": 900,
+      "Width": 900,
+      "Margin": "300,50,0,0",
+      "Pading": "300,100,100,100"
+    },
+    {
+      "Id": 2,
+      "Title": "学校历史",
+      "Type": 2,
+      "images": null,
+      "Enable": true,
+      "Height": 600,
+      "Width": 800,
+      "Margin": "100,0,0,0",
+      "Padding": "100,0,0,0"
+    },
+    {
+      "Id": 3,
+      "Title": "视频点播",
+      "Type": 3,
+      "images": null,
+      "Enable": true,
+      "Height": 400,
+      "Width": 600,
+      "Margin": "100,50,0,0",
+      "Padding": "0,100,0,0"
+    },
+    {
+      "Id": 4,
+      "Title": "照片墙",
+      "Type": 2,
+      "images": null,
+      "Enable": true,
+      "Height": 800,
+      "Width": 1200,
+      "Margin": "50,-150,0,0",
+      "Pading": "100,0,100,100"
+    },
+    {
+      "Id": 5,
+      "Title": "其他",
+      "Type": 4,
+      "images": null,
+      "Enable": true,
+      "Height": 700,
+      "Width": 1200,
+      "Margin": "50,0,0,0",
+      "Pading": "50,0,0,0"
+    }
+  ],
+  "Height": 800,
+  "Name": "demo",
+  "Width": 1400,
+  "Margin": "100,0,0,0",
+  "Pading": "100,0,0,0",
+  "TitleMargin": "50,0,0,0",
+  "TitlePadding": "50,50,0,0"
+}

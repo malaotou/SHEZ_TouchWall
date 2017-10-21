@@ -7,7 +7,7 @@
         Title="MainWindow" Height="900" Width="6400"  
         WindowState="Maximized"
         WindowStyle="None"        
-        x:Name="RootWindow" >
+        x:Name="RootWindow" TouchDown="RootWindow_TouchDown_1" TouchLeave="RootWindow_TouchLeave" Loaded="RootWindow_Loaded" >
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -45,10 +45,10 @@
                   ManipulationCompleted="h_Main_ManipulationCompleted"
                
                 >
-            <StackPanel x:Name="demo"  
+            <StackPanel x:Name="hStackPanel"  
                         Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                         VerticalAlignment="Center"  
-                        Orientation="Horizontal" >
+                        Orientation="Horizontal">
                 <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
                     <my:UC1 Margin="200 50 0 0"
@@ -56,7 +56,7 @@
                             Height="1080"  Padding="100"></my:UC1>
                 </StackPanel>-->
 
-                <StackPanel Orientation="Vertical" Width="1600" >
+                <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
                     <my:UCChart2 Margin="200 200 0 0"
                             Width="800" 
@@ -82,7 +82,7 @@
                     <my:UCFlicker Margin="0 -200 0 0"
                             Width="{Binding ElementName=RootWindow,Path=Width}" 
                             Height="1100"  Padding="100" ></my:UCFlicker>
-                </StackPanel>
+                </StackPanel>-->
             </StackPanel>
         </Canvas>
     </ScrollViewer>
