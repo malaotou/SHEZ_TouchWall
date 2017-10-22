@@ -74,7 +74,7 @@
             <Image Margin="30,30,30,0"  Stretch="Uniform"
                    Source="{Binding ElementName=carousel, Path=ActiveItem.DataContext}" 
                    VerticalAlignment="Center" 
-                   HorizontalAlignment="Center" />
+                   HorizontalAlignment="Center" TouchDown="Image_TouchDown"/>
             <!--<dxca:CarouselNavigator
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"

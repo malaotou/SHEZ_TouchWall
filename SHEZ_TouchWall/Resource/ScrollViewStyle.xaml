@@ -29,7 +29,7 @@
         </ControlTemplate>
 
         <!-- 应该在此定义资源字典条目。-->
-        <SolidColorBrush x:Key="ScrollBarDisabledBackground" Color="#F4F4F4"/>
+        <SolidColorBrush x:Key="ScrollBarDisabledBackground" Color="Transparent"/>
 
         <Style x:Key="VerticalScrollBarPageButton" TargetType="{x:Type RepeatButton}">
             <Setter Property="OverridesDefaultStyle" Value="true"/>

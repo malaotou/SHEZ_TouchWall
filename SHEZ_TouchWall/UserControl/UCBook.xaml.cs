@@ -49,20 +49,13 @@ namespace SHEZ_TouchWall
         public UCBook()
         {
             InitializeComponent();
-            Image image3 = new Image();
-            image3.Source = new BitmapImage(new Uri(@"d:\bg.jpg"));
-            image3.Width = 100;
-            image3.Height = 100;
-            image3.SetValue(Panel.ZIndexProperty, 1);
-            image3.IsManipulationEnabled = true;
-            ((SHEZ_TouchWall.MainWindow)Application.Current.MainWindow).container.Children.Add(image3);
-
-
-            //.Children.Add(image);
-            //Thread.Sleep(1000);
-
-
-
+            //Image image3 = new Image();
+            //image3.Source = new BitmapImage(new Uri(@"d:\bg.jpg"));
+            //image3.Width = 100;
+            //image3.Height = 100;
+            //image3.SetValue(Panel.ZIndexProperty, 1);
+            //image3.IsManipulationEnabled = true;
+            //((SHEZ_TouchWall.MainWindow)Application.Current.MainWindow).container.Children.Add(image3);
 
             employees.Add(new Employee
             {

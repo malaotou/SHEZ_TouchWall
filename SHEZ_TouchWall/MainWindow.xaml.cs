@@ -29,16 +29,6 @@ namespace SHEZ_TouchWall
         {
             InitializeComponent();
             InitCurrentWindow();
-            //System.Windows.Application.Current.Dispatcher.Invoke(DispatcherPriority.Background, new Action(InitCurrentWindow));
-            //Image image3 = new Image();
-            //image3.Source = new BitmapImage(new Uri(@"d:\bg.jpg"));
-            //image3.IsManipulationEnabled = true;
-            ////image3.IsManipulationEnabled 
-            //image3.Width = 200;
-            //image3.Height = 200;
-            //container.Children.Add(image3);
-
-            //demo.Children.Add(image);
         }
         private void initControl()
         {
