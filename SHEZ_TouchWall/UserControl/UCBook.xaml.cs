@@ -35,15 +35,8 @@ namespace SHEZ_TouchWall
 
         private static void OnTick(object sender, EventArgs e)
         {
-            employees.Add(new Employee
-            {
-                Photo = "./images/left.jpg",
-
-                PageContent = "上海市第二中学是上海市实验性示范性高中",
-                PageHeader = "上海市第二中学简介",
-                Notes = @"上海市第二中学是上海市实验性示范性高中。她的前身是务本女塾，创办于1902年，是中国最早的由国人创办的女子学校之一。 学校办学112年，经过历任校长的不懈努力，数以百计的教职员工辛勤耕耘，在继承优良传统的基础上形成了勤奋、刻苦、主动、创造的学风和严谨、活泼、求实、进取的校风，把促进学生德、智、体、美、劳五育和谐发展，兴趣、爱好、个性、特长得到培养作为学校的办学目标。"
-
-            });
+            
+           
         }
 
         public UCBook()

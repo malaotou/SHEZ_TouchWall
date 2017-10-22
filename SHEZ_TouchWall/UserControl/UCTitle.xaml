@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-               xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
              xmlns:local="clr-namespace:SHEZ_TouchWall"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Background="Transparent">
+             x:Name="rootControl"
+             d:DesignHeight="300" d:DesignWidth="300" Background="Transparent" Padding="0" Margin="0">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -22,21 +23,76 @@
                   VerticalScrollBarVisibility="Hidden"
                   VerticalAlignment="Center"
                   VerticalContentAlignment="Stretch" 
-                  Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
-                       Background="Transparent"
+                   Background="Transparent"
                   BorderBrush="Green" BorderThickness="0"   
+                        Height="{Binding ElementName=rootControl,Path=ActualHeight}"
+                                    Width="{Binding ElementName=rootControl,Path=ActualWidth}"
                   Template="{StaticResource MyScrollViewerControlTemplate}">
-            <dxlc:TileLayoutControl Background="Transparent" x:Name="TileLayoutControl1" 
+            <ScrollViewer>
+                <dxlc:TileLayoutControl Background="Transparent" x:Name="TileLayoutControl1" AllowAddFlowBreaksDuringItemMoving="False"
+                                    
+                                    AllowLayerSizing="False">
+                    <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               dxlc:TileLayoutControl.GroupHeader="校史沿革">
+                        <dxlc:Tile.ContentSource>
+                            <dx:FrameworkElements>
+                                <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                                <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                                <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                                <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                                </TextBlock>
+                            </dx:FrameworkElements>
+
+                        </dxlc:Tile.ContentSource>
+                    </dxlc:Tile>
+                    <dxlc:Tile Header="关注" x:Name="Tile2" Size="Small" Background="#FFC14AAF" dxlc:TileLayoutControl.GroupHeader="Group1">
+                        <Image x:Name="Image2" Stretch="None" Source="/Images/agents/1.jpg"/>
+                    </dxlc:Tile>
+                    <dxlc:Tile Header="主页" x:Name="Tile3" Size="Small" Background="#FF5CA332" dxlc:FlowLayoutControl.IsFlowBreak="False"  
+                       dxlc:TileLayoutControl.GroupHeader="Group1">
+                        <Image x:Name="Image3" Stretch="None" Source="pack://application:,,,/Images/agents/1.jpg"/>
+                    </dxlc:Tile>
+                    <dxlc:Tile Header="音乐" x:Name="Tile4" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"  
+                HorizontalHeaderAlignment="Center" >
+                        <Image x:Name="Image4" Stretch="None" Source="/Images/agents/1.jpg"/>
+                    </dxlc:Tile>
+                    <dxlc:Tile Name="Tile5" Size="Large"  
+                       HorizontalHeaderAlignment="Center" Background="#FF666666"  
+                       ContentSource="{Binding PeopleList}" ContentChangeInterval="0:0:3" AnimateContentChange="True" Command="{Binding CommClick}">
+                        <dxlc:Tile.ContentTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="0" Text="{Binding Address}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,40,0,0"/>
+                                    <Image Grid.Column="1" Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                            </DataTemplate>
+                        </dxlc:Tile.ContentTemplate>
+                    </dxlc:Tile>
+                </dxlc:TileLayoutControl>
+            </ScrollViewer>
+            <!--<dxlc:TileLayoutControl Background="#EE939393" x:Name="TileLayoutControl1" 
                                     AllowAddFlowBreaksDuringItemMoving="False"
                                     AllowItemMoving="False"
-                                    AllowLayerSizing="False"
+                                    AllowLayerSizing="False" 
+                                   
                                     >
                 <dxlc:FlowLayoutControl  AllowItemMoving="False" AllowLayerSizing="False">
                     <dxlc:Tile Size="ExtraLarge" 
                                Background="#FFD4AF00" 
                                Header="校史沿革" 
                                HorizontalAlignment="Left" 
-                               dxlc:TileLayoutControl.GroupHeader="Group2" >
+                               dxlc:TileLayoutControl.GroupHeader="校史沿革">
                         <dxlc:Tile.ContentSource>
                             <dx:FrameworkElements>
                                 <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
@@ -52,7 +108,7 @@
                         </dxlc:Tile.ContentSource>
                     </dxlc:Tile>
                     <dxlc:Tile Size="ExtraLarge" Background="#FFD4AF00" Header="校史沿革" HorizontalAlignment="Left" 
-                           Padding="0" Margin="0,0"  dxlc:TileLayoutControl.GroupHeader="Group2" >
+                           Padding="0" Margin="0,0"  dxlc:TileLayoutControl.GroupHeader="校史沿革" >
                         <dxlc:Tile.ContentSource>
                             <dx:FrameworkElements>
                                 <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
@@ -105,7 +161,8 @@
                     </dxlc:Tile>
                     <dxlc:Tile Name="Tile5" Size="Large" dxlc:TileLayoutControl.GroupHeader="Group2"  
                        HorizontalHeaderAlignment="Center" Background="#FF666666"  
-                       ContentSource="{Binding PeopleList}" ContentChangeInterval="0:0:3" AnimateContentChange="True" Command="{Binding CommClick}">
+                       ContentSource="{Binding PeopleList}" ContentChangeInterval="0:0:3"
+                               AnimateContentChange="True" Command="{Binding CommClick}">
                         <dxlc:Tile.ContentTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -120,9 +177,16 @@
                             </DataTemplate>
                         </dxlc:Tile.ContentTemplate>
                     </dxlc:Tile>
+                    <dxlc:Tile Header="音乐" x:Name="Tile41" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"  
+                HorizontalHeaderAlignment="Center" dxlc:TileLayoutControl.GroupHeader="Group2" >
+                        <Image x:Name="Image7" Stretch="None" Source="/Images/agents/4.jpg"/>
+                    </dxlc:Tile>
+                    <dxlc:Tile Header="音乐" x:Name="Tile8" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"  
+                HorizontalHeaderAlignment="Center" dxlc:TileLayoutControl.GroupHeader="Group2" >
+                        <Image x:Name="Image9" Stretch="None" Source="/Images/agents/4.jpg"/>
+                    </dxlc:Tile>
                 </dxlc:FlowLayoutControl>
-
-            </dxlc:TileLayoutControl>
+            </dxlc:TileLayoutControl>-->
         </ScrollViewer>
     </Grid>
 </UserControl>

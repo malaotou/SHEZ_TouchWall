@@ -94,7 +94,6 @@ namespace SHEZ_TouchWall
 
         private void Canvas_ManipulationStarting(object sender, ManipulationStartingEventArgs e)
         {
-
             e.ManipulationContainer = container;
             e.Handled = true;
         }
@@ -128,8 +127,6 @@ namespace SHEZ_TouchWall
                 image2.SetZIndex(100);
                 image2.IsManipulationEnabled = true;
                 container.Children.Add(image2);
-
-
                 //}
             }
         }
@@ -168,21 +165,6 @@ namespace SHEZ_TouchWall
             timerNotice.Start();
 
         }
-
-        //private void BindReinit()
-        //{
-        //    this.RootWindow.Dispatcher.Invoke(new Action(() =>
-        //    {
-        //        Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
-        //        //1. open a new instance of the main window:
-        //        MainWindow newWin = new MainWindow();
-        //        newWin.Show();
-        //        //2. close the current one
-
-        //        //Application.Current.Shutdown();
-        //        this.Close();
-        //    }));
-        //}
         private void InitCurrentWindow()
         {
             try
@@ -229,34 +211,6 @@ namespace SHEZ_TouchWall
                     {
                         canvas outcanvas = outDs.ReadObject(outMs) as canvas;
                         AddContentControl(outcanvas, hStackPanel);
-                        //foreach (var item in outcanvas.Controls)
-                        //{
-                        //    if (item.Enable)
-                        //    {
-                        //        #region addControl
-                        //        StackPanel stackpanel = new StackPanel();
-                        //        stackpanel.Orientation = Orientation.Vertical;
-                        //        stackpanel.Width = outcanvas.Width;
-
-
-                        //        // 初始化一些属性
-
-                        //        // 孩子
-                        //        Label title = new Label();
-                        //        title.Content = item.Title;
-                        //        title.FontSize = 40;
-                        //        //title.FontFamily = null;
-                        //        stackpanel.Children.Add(title);
-
-                        //        var content = AddContentControl(item);
-                        //        stackpanel.Children.Add(content);
-
-
-
-                        //    }
-                        //    #endregion
-                        //}
-
                     }
                 }));
             }
@@ -264,58 +218,6 @@ namespace SHEZ_TouchWall
             {
 
             }
-        }
-        private Control AddTitleControl(MyControl item)
-        {
-            Control control = new Control();
-            switch (item.Id)
-            {
-                case 1:
-                    control = new UC1();
-                    break;
-                case 2:
-                    control = new UCBook();
-                    break;
-                case 3:
-                    control = new UCChart2();
-                    break;
-                case 4:
-                    control = new UCFlicker();
-                    break;
-                case 5:
-                    control = new UCPhotoGallery2();
-                    break;
-                case 6:
-                    break;
-                case 7:
-                    break;
-
-            }
-            if (item != null && item.Margin != null)
-            {
-                var marginItems = item.Margin.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                if (marginItems.Length == 4)
-                    control.Margin = new Thickness(
-                                                double.Parse(marginItems[0]),
-                                                double.Parse(marginItems[1]),
-                                                double.Parse(marginItems[2]),
-                                                double.Parse(marginItems[3]));
-            }
-            if (item != null && item.Padding != null)
-            {
-                var paddingItems = item.Padding.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-                if (paddingItems.Length == 4)
-                    control.Margin = new Thickness(
-                                                double.Parse(paddingItems[0]),
-                                                double.Parse(paddingItems[1]),
-                                                double.Parse(paddingItems[2]),
-                                                double.Parse(paddingItems[3]));
-            }
-
-            control.Height = item.Height;
-            control.Width = item.Width;
-            return control;
-
         }
         private void AddContentControl(canvas outcanvas, StackPanel container)
         {
@@ -329,11 +231,13 @@ namespace SHEZ_TouchWall
                 {
 
                     stackpanel.Orientation = Orientation.Vertical;
+                    stackpanel.HorizontalAlignment = HorizontalAlignment.Left;
                     stackpanel.Width = outcanvas.Width;
                     #region//Process Titel
                     Label title = new Label();
                     title.Content = item.Title;
                     title.FontSize = 40;
+                    title.Width = 200;
                     if (outcanvas.TitleMargin != null)
                     {
                         title.Margin = processThickness(outcanvas.TitleMargin);
@@ -347,7 +251,7 @@ namespace SHEZ_TouchWall
 
                     #region ProcessContent
                     Control control = new Control();
-                    switch (item.Id)
+                    switch (item.Type)
                     {
                         case 1:
                             control = new UC1();
@@ -365,6 +269,7 @@ namespace SHEZ_TouchWall
                             control = new UCPhotoGallery2();
                             break;
                         case 6:
+                            control = new UCTitle();
                             break;
                         case 7:
                             break;
@@ -374,8 +279,14 @@ namespace SHEZ_TouchWall
                     control.Padding = processThickness(item.Padding);
                     control.Height = item.Height;
                     control.Width = item.Width;
+                    control.HorizontalContentAlignment = HorizontalAlignment.Left;
                     #endregion
                     stackpanel.Children.Add(control);
+                    //Image image = new Image();
+                    //image.Source = new BitmapImage(new Uri("d:\\bg.jpt"));
+                    //image.Width = 200;
+                    //image.Height = 200;
+                    //stackpanel.Children.Add(image);
                 }
                 container.Children.Add(stackpanel);
             }

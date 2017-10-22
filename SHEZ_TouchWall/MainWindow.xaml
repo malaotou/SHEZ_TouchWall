@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:my="clr-namespace:SHEZ_TouchWall"
-        Title="MainWindow" Height="900" Width="6400"  
+        Title="MainWindow" Height="Auto" Width="Auto"  
         WindowState="Maximized"
         WindowStyle="None"        
         x:Name="RootWindow" TouchDown="RootWindow_TouchDown_1" TouchLeave="RootWindow_TouchLeave" Loaded="RootWindow_Loaded" >
@@ -43,16 +44,19 @@
 
         <Canvas Width="6400" Height="1200" x:Name="container"
                ManipulationCompleted="Window_ManipulationCompleted" 
-                
                                 ManipulationStarting="Canvas_ManipulationStarting"
-                                ManipulationDelta="Window_ManipulationDelta" ManipulationInertiaStarting="container_ManipulationInertiaStarting" >
+                                ManipulationDelta="Window_ManipulationDelta" 
+                                ManipulationInertiaStarting="container_ManipulationInertiaStarting" >
 
 
             <StackPanel x:Name="hStackPanel"  
                         Height="{Binding ElementName=RootWindow,Path=ActualHeight}"
                         VerticalAlignment="Center"  
+                        HorizontalAlignment="Left"
                         Orientation="Horizontal">
-                <my:UCTitle></my:UCTitle>
+
+                <my:UCTitle Width="1000" Height="800"></my:UCTitle>
+
                 <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
                     <my:UC1 Margin="200 50 0 0"
