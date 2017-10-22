@@ -8,7 +8,7 @@
              xmlns:local="clr-namespace:SHEZ_TouchWall"
              mc:Ignorable="d" 
              x:Name="rootControl"
-             d:DesignHeight="300" d:DesignWidth="300" Background="Transparent" Padding="0" Margin="0">
+             d:DesignHeight="300" d:DesignWidth="300" Background="Transparent" Padding="0" Margin="0" DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -28,59 +28,236 @@
                         Height="{Binding ElementName=rootControl,Path=ActualHeight}"
                                     Width="{Binding ElementName=rootControl,Path=ActualWidth}"
                   Template="{StaticResource MyScrollViewerControlTemplate}">
-            <ScrollViewer>
-                <dxlc:TileLayoutControl Background="Transparent" x:Name="TileLayoutControl1" AllowAddFlowBreaksDuringItemMoving="False"
-                                    
+            <dxlc:TileLayoutControl Background="Transparent" x:Name="TileLayoutControl1" AllowAddFlowBreaksDuringItemMoving="False"
+                                    AllowItemMoving="False"                                    
                                     AllowLayerSizing="False">
-                    <dxlc:Tile Size="ExtraLarge" 
+
+
+
+
+                <dxlc:Tile Name="tile5" Size="{Binding Size}" 
+                       HorizontalHeaderAlignment="Center" Background="#FF666666"
+                       ContentSource="{Binding Agents}" ContentChangeInterval="00:00:03" AnimateContentChange="True">
+                    <dxlc:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <TextBlock Text="{Binding AgentName}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                                <Image Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxlc:Tile.ContentTemplate>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="Transparent" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               dxlc:TileLayoutControl.GroupHeader="校史沿革" IsEnabled="False" >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="d:\bg.jpg" Stretch="Fill" MouseDown="Tile_MouseDown" IsEnabled="False"/>
+                            <Image Margin="12" Source="/Images/Cars/e.jpg" Stretch="Uniform" MouseDown="Tile_MouseDown" IsEnabled="False"/>
+                            <Image Margin="12" Source="/Images/Cars/5.jpg" Stretch="Fill" MouseDown="Tile_MouseDown" IsEnabled="False"/>
+                            <Image Margin="12" Source="/Images/Cars/6.jpg" Stretch="UniformToFill" MouseDown="Tile_MouseDown" IsEnabled="False"/>
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Bold>十九大报告透露的十件民生实事</Bold>
+                            </TextBlock>
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+                            <Bold>十九大报告有哪些亮点 世界主流媒体这样说,十九大报告有哪些亮点 世界主流媒体这样说</Bold>
+                            </TextBlock>
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  TextWrapping="Wrap">
+                            <Bold>新华社评论员：深刻把握“分两步走”的新目标</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="Large" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                              >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <!--<Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />-->
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Bold>十九大报告透露的十件民生实事</Bold>
+                            </TextBlock>
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+                            <Bold>十九大报告有哪些亮点 世界主流媒体这样说,十九大报告有哪些亮点 世界主流媒体这样说</Bold>
+                            </TextBlock>
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"  TextWrapping="Wrap">
+                            <Bold>新华社评论员：深刻把握“分两步走”的新目标</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Header="关注" x:Name="Tile2" Size="Small" Background="#FFC14AAF" dxlc:TileLayoutControl.GroupHeader="Group1">
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <!--<Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />-->
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+                            十九大报告透露的十件民生实事
+                            </TextBlock>
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">
+                            十九大报告有哪些亮点 世界主流媒体这样说,十九大报告有哪些亮点 世界主流媒体这样说
+                            </TextBlock>
+                            <TextBlock FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"  TextWrapping="Wrap">
+                            新华社评论员：深刻把握“分两步走”的新目标
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Header="主页" x:Name="Tile3" Size="Small" Background="#FF5CA332" dxlc:FlowLayoutControl.IsFlowBreak="False"  
+                       dxlc:TileLayoutControl.GroupHeader="Group1">
+                    <Image x:Name="Image3" Stretch="None" Source="pack://application:,,,/Images/agents/1.jpg"/>
+                </dxlc:Tile>
+                <dxlc:Tile Header="音乐" x:Name="Tile4" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"  
+                HorizontalHeaderAlignment="Center" >
+                    <Image x:Name="Image4" Stretch="None" Source="/Images/agents/1.jpg"/>
+                </dxlc:Tile>
+                <dxlc:Tile Name="Tile5" Size="Large"  
+                       HorizontalHeaderAlignment="Center" Background="#FF666666"  
+                       ContentSource="{Binding PeopleList}" ContentChangeInterval="0:0:3" AnimateContentChange="True" Command="{Binding CommClick}">
+                    <dxlc:Tile.ContentTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="0" Text="{Binding Address}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,40,0,0"/>
+                                <Image Grid.Column="1" Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </dxlc:Tile.ContentTemplate>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="ExtraLarge" 
+                               Background="#FFD4AF00" 
+                               Header="校史沿革" 
+                               HorizontalAlignment="Left" 
+                               dxlc:TileLayoutControl.GroupHeader="校史沿革"  dxlc:FlowLayoutControl.IsFlowBreak="True"  >
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
+                            </TextBlock>
+                        </dx:FrameworkElements>
+
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+                <dxlc:Tile Size="Large" 
                                Background="#FFD4AF00" 
                                Header="校史沿革" 
                                HorizontalAlignment="Left" 
                                dxlc:TileLayoutControl.GroupHeader="校史沿革">
-                        <dxlc:Tile.ContentSource>
-                            <dx:FrameworkElements>
-                                <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
-                                <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
-                                <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
-                                <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
-
-                                <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <dxlc:Tile.ContentSource>
+                        <dx:FrameworkElements>
+                            <Image Margin="12" Source="/Images/agents/1.jpg" Stretch="None" />
+                            <Image Margin="12" Source="/Images/agents/2.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/3.jpg" Stretch="Uniform" />
+                            <Image Margin="12" Source="/Images/agents/4.jpg" Stretch="Uniform" />
+                            <TextBlock FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
                             Your <Bold>Edge</Bold> in <Bold>Real Estate</Bold>
-                                </TextBlock>
-                            </dx:FrameworkElements>
+                            </TextBlock>
+                        </dx:FrameworkElements>
 
-                        </dxlc:Tile.ContentSource>
-                    </dxlc:Tile>
-                    <dxlc:Tile Header="关注" x:Name="Tile2" Size="Small" Background="#FFC14AAF" dxlc:TileLayoutControl.GroupHeader="Group1">
-                        <Image x:Name="Image2" Stretch="None" Source="/Images/agents/1.jpg"/>
-                    </dxlc:Tile>
-                    <dxlc:Tile Header="主页" x:Name="Tile3" Size="Small" Background="#FF5CA332" dxlc:FlowLayoutControl.IsFlowBreak="False"  
-                       dxlc:TileLayoutControl.GroupHeader="Group1">
-                        <Image x:Name="Image3" Stretch="None" Source="pack://application:,,,/Images/agents/1.jpg"/>
-                    </dxlc:Tile>
-                    <dxlc:Tile Header="音乐" x:Name="Tile4" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"  
-                HorizontalHeaderAlignment="Center" >
-                        <Image x:Name="Image4" Stretch="None" Source="/Images/agents/1.jpg"/>
-                    </dxlc:Tile>
-                    <dxlc:Tile Name="Tile5" Size="Large"  
-                       HorizontalHeaderAlignment="Center" Background="#FF666666"  
-                       ContentSource="{Binding PeopleList}" ContentChangeInterval="0:0:3" AnimateContentChange="True" Command="{Binding CommClick}">
-                        <dxlc:Tile.ContentTemplate>
-                            <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                    <TextBlock Grid.Column="0" Text="{Binding Address}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="40,40,0,0"/>
-                                    <Image Grid.Column="1" Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                </Grid>
-                            </DataTemplate>
-                        </dxlc:Tile.ContentTemplate>
-                    </dxlc:Tile>
-                </dxlc:TileLayoutControl>
-            </ScrollViewer>
+                    </dxlc:Tile.ContentSource>
+                </dxlc:Tile>
+
+            </dxlc:TileLayoutControl>
             <!--<dxlc:TileLayoutControl Background="#EE939393" x:Name="TileLayoutControl1" 
                                     AllowAddFlowBreaksDuringItemMoving="False"
                                     AllowItemMoving="False"

@@ -7,7 +7,7 @@
       "Type": 6,
       "images": null,
       "Enable": true,
-      "Height": 700,
+      "Height": 900,
       "Width": 1200,
       "Margin": "0,0,0,0",
       "Pading": "0,0,0,0"
@@ -15,7 +15,7 @@
     {
       "Id": 2,
       "Title": "学校历史",
-      "Type": 2,
+      "Type": 6,
       "images": null,
       "Enable": true,
       "Height": 700,
@@ -26,7 +26,7 @@
     {
       "Id": 3,
       "Title": "视频点播",
-      "Type": 3,
+      "Type": 6,
       "images": null,
       "Enable": true,
       "Height": 700,
@@ -37,7 +37,7 @@
     {
       "Id": 4,
       "Title": "照片墙",
-      "Type": 4,
+      "Type": 6,
       "images": null,
       "Enable": true,
       "Height": 700,
@@ -48,7 +48,7 @@
     {
       "Id": 5,
       "Title": "其他",
-      "Type": 5,
+      "Type": 6,
       "images": null,
       "Enable": true,
       "Height": 700,
@@ -57,7 +57,7 @@
       "Pading": "0,0,0,500"
     }
   ],
-  "Height": 700,
+  "Height": 800,
   "Name": "demo",
   "Width": 1366,
   "Margin": "0,0,0,0",

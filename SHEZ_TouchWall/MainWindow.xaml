@@ -55,8 +55,6 @@
                         HorizontalAlignment="Left"
                         Orientation="Horizontal">
 
-                <my:UCTitle Width="1000" Height="800"></my:UCTitle>
-
                 <!--<StackPanel Orientation="Vertical" Width="1600" >
                     <Label Content="校史沿革" FontSize="40" Margin="200 80 0 0" FontFamily="华文隶书,Times New Roman,Technical Italic,Comic Sans MS,Arial"></Label>
                     <my:UC1 Margin="200 50 0 0"

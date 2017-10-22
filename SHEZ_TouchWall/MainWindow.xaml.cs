@@ -14,6 +14,9 @@ using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Threading;
 using System.Windows.Media.Imaging;
+using SHEZ_TouchWall.Helper;
+using MongoDB.Driver;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace SHEZ_TouchWall
 {
@@ -25,10 +28,16 @@ namespace SHEZ_TouchWall
         private System.Timers.Timer timerNotice = null;
         private Stopwatch watcher = new Stopwatch();
         bool isTouched = false;
+
+        MongoCollection<info> _infos;
         public MainWindow()
         {
             InitializeComponent();
             InitCurrentWindow();
+            MongoHelper helper = new Helper.MongoHelper();
+            var database = helper.genClent();
+            _infos = database.GetCollection<info>("info");
+
         }
         private void initControl()
         {
@@ -246,7 +255,7 @@ namespace SHEZ_TouchWall
                     {
                         title.Padding = processThickness(outcanvas.TitlePadding);
                     }
-                    stackpanel.Children.Add(title);
+                    //stackpanel.Children.Add(title);
                     #endregion
 
                     #region ProcessContent
@@ -347,6 +356,15 @@ namespace SHEZ_TouchWall
 
             e.Handled = true;
         }
+    }
+    public class info
+    {
+        [BsonId]
+        public MongoDB.Bson.BsonObjectId Id { get; set; }
+        public int info_id { get; set; }
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public int age { get; set; }
     }
 }
 

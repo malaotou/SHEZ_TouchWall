@@ -58,6 +58,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\Program Files (x86)\DevExpress 15.1\Components\Bin\Framework\DevExpress.Xpf.LayoutControl.v15.1.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\3dlls\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\3dlls\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -84,6 +90,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="configuration\modules\canvas.cs" />
+    <Compile Include="Helper\MongoHelper.cs" />
+    <Compile Include="Helper\TitleControlHelper.cs" />
     <Compile Include="Helper\TouchScrolling.cs" />
     <Compile Include="Modules\Flickers.cs" />
     <Compile Include="Modules\ImageInfo.cs" />
@@ -111,6 +119,9 @@
     </Compile>
     <Compile Include="UserControl\UCPhotoGallery2.xaml.cs">
       <DependentUpon>UCPhotoGallery2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UCTitieItem.xaml.cs">
+      <DependentUpon>UCTitieItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl\UCTitle.xaml.cs">
       <DependentUpon>UCTitle.xaml</DependentUpon>
@@ -158,6 +169,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControl\UCPhotoGallery2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\UCTitieItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBWPFLocalDB", "MongoDBWPFLocalDB\MongoDBWPFLocalDB.csproj", "{23B334C4-3D71-47DD-BF67-D4F9C4F0FB44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B334C4-3D71-47DD-BF67-D4F9C4F0FB44}.Debug|x86.ActiveCfg = Debug|x86
+		{23B334C4-3D71-47DD-BF67-D4F9C4F0FB44}.Debug|x86.Build.0 = Debug|x86
+		{23B334C4-3D71-47DD-BF67-D4F9C4F0FB44}.Release|x86.ActiveCfg = Release|x86
+		{23B334C4-3D71-47DD-BF67-D4F9C4F0FB44}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

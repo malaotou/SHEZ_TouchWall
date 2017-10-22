@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SHEZ_TouchWall.UCTitieItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SHEZ_TouchWall"
+              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+            xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             >
+    <Grid>
+        <dxlc:Tile Name="tile5" Size="Large"
+                       HorizontalHeaderAlignment="Center" Background="#FF666666"
+                       ContentSource="{Binding Agents}" ContentChangeInterval="00:00:03" AnimateContentChange="True">
+            <dxlc:Tile.ContentTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding AgentName}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <Image Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                    </Grid>
+                </DataTemplate>
+            </dxlc:Tile.ContentTemplate>
+        </dxlc:Tile>
+    </Grid>
+</UserControl>
